@@ -2997,7 +2997,7 @@ export default function Home() {
               marginBottom: '32px'
             }} className="insta-grid">
               
-                { url: '/assets/ZIPRINGS/new_ring_3.jpeg', link: 'https://www.instagram.com/laxmijewellersadawad/', title: 'Gents Ring Classic' },
+                {([ { url: '/assets/ZIPRINGS/new_ring_3.jpeg', link: 'https://www.instagram.com/laxmijewellersadawad/', title: 'Gents Ring Classic' },
                 { url: '/assets/silver_heart_bangles.jpg', link: 'https://www.instagram.com/laxmijewellersadawad/', title: 'Silver Heart Bangles' },
                 { url: '/assets/gents_collection_img.jpg', link: 'https://www.instagram.com/laxmijewellersadawad/', title: 'Gents Gold Collection' },
                 { url: '/assets/ladies_collection_img.jpg', link: 'https://www.instagram.com/laxmijewellersadawad/', title: 'Ladies Gold Bangle' },
