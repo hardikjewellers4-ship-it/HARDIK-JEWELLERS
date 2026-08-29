@@ -1,0 +1,14 @@
+*.zip
+node_modules
+.git
+dist
+.env
+*.log
+temp/
+new_products_temp.txt
+new_rings_temp.txt
+generate_products.ps1
+generate_rings.ps1
+inject_rings.js
+fix_grid.js
+set_default.js
