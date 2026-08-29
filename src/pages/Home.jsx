@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 
 
-// Banners customized for LAXMI JEWELLERS exact layout using Model Images
+// Banners customized for HARDIK JEWELLERS exact layout using Model Images
 const bannerImages = [
   {
     desktopUrl: '/assets/gold_banner_desktop.jpg',
@@ -1568,7 +1568,7 @@ export default function Home() {
             if (Array.isArray(posts)) {
               setInstaPosts(posts.slice(0, 9).map(p => ({
                 url: p.mediaUrl || p.thumbnailUrl,
-                link: p.permalink || 'https://www.instagram.com/laxmijewellersadawad/',
+                link: p.permalink || 'https://www.instagram.com/hardikjewellers_/',
                 title: p.caption || 'Instagram Post'
               })));
             }
@@ -1742,7 +1742,7 @@ export default function Home() {
   const [showPwaNotification, setShowPwaNotification] = useState(false);
 
   useEffect(() => {
-    document.title = "Laxmi Jewellers | Premium Gold & Silver Jewellery";
+    document.title = "Hardik Jewellers | Premium Gold & Silver Jewellery";
   }, []);
 
   useEffect(() => {
@@ -2020,7 +2020,7 @@ export default function Home() {
               <span className="ping-dot"></span>
               LIVE RATE
             </span>
-            <span className="ticker-item" style={{ fontWeight: 700, color: '#ffffff' }}>LAXMI JEWELLERS:</span>
+            <span className="ticker-item" style={{ fontWeight: 700, color: '#ffffff' }}>HARDIK JEWELLERS:</span>
             {goldRates.gold24k > 0 && (
               <>
                 <span className="ticker-item">24K GOLD: <strong>₹{goldRates.gold24k}/g</strong></span>
@@ -2061,8 +2061,8 @@ export default function Home() {
           <a href="#" className="nav-brand" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <img src="/assets/logo.jpg" alt="Logo" className="brand-logo-img" style={{ height: '36px', width: '36px', borderRadius: '8px', objectFit: 'cover' }} />
             <div className="brand-text-container">
-              <h1 className="brand-name" style={{ margin: 0, fontSize: 'inherit', fontWeight: 'inherit', fontFamily: 'inherit', color: 'inherit', display: 'inline' }}>LAXMI JEWELLERS</h1>
-              <span className="brand-subtitle">ADAWAD</span>
+              <h1 className="brand-name" style={{ margin: 0, fontSize: 'inherit', fontWeight: 'inherit', fontFamily: 'inherit', color: 'inherit', display: 'inline' }}>HARDIK JEWELLERS</h1>
+              <span className="brand-subtitle">ULHASNAGAR</span>
             </div>
           </a>
 
@@ -2085,7 +2085,7 @@ export default function Home() {
           </nav>
 
           {/* Call button */}
-          <a href="tel:07776977700" className="call-btn">
+          <a href="tel:+919892911531" className="call-btn">
             <Phone className="icon-sm" />
             <span>CALL NOW</span>
           </a>
@@ -2157,7 +2157,7 @@ export default function Home() {
               <a href="/login" className="mobile-nav-link">LOGIN / REGISTER</a>
             )}
 
-            <a href="tel:07776977700" className="mobile-call-btn">
+            <a href="tel:+919892911531" className="mobile-call-btn">
               <Phone className="icon-sm" />
               <span>CALL NOW</span>
             </a>
@@ -2645,7 +2645,7 @@ export default function Home() {
                       <button
                         onClick={(e) => {
                           e.preventDefault();
-                          navigator.clipboard.writeText(`https://www.laxmijewellers.in/?product=${product.id}`);
+                          navigator.clipboard.writeText(`https://www.hardikjewellers.in/?product=${product.id}`);
                           alert("Product link copied to clipboard!");
                         }}
                         style={{
@@ -2658,7 +2658,7 @@ export default function Home() {
                         <Share2 size={16} />
                       </button>
                       <a
-                        href={`https://wa.me/9107776977700?text=Hello%20HARDIK%20Jewellers,%20I%20am%20interested%20in%20buying%20your%20${encodeURIComponent(product.title)}.%0A%0AProduct%20Link:%20https://www.laxmijewellers.in/?product=${product.id}`}
+                        href={`https://wa.me/919892911531?text=Hello%20HARDIK%20Jewellers,%20I%20am%20interested%20in%20buying%20your%20${encodeURIComponent(product.title)}.%0A%0AProduct%20Link:%20https://www.hardikjewellers.in/?product=${product.id}`}
                         target="_blank"
                         rel="noreferrer"
                         style={{
@@ -2693,12 +2693,12 @@ export default function Home() {
               </span>
               <p className="custom-order-desc">
                 {activeCategory === 'SILVER COLLECTION'
-                  ? 'Our Silver Collection is launching soon! Visit our ADAWAD showroom or WhatsApp us to enquire about Silver Chain, Bracelets, Payal, Challa, Silver Utensils and Mangalsutra.'
-                  : `We craft bespoke handcrafted pieces matching your specifications for ${activeSubCategory !== 'ALL' ? activeSubCategory : activeCategory}. Please contact our ADAWAD showroom on WhatsApp to design your dream piece.`
+                  ? 'Our Silver Collection is launching soon! Visit our ULHASNAGAR showroom or WhatsApp us to enquire about Silver Chain, Bracelets, Payal, Challa, Silver Utensils and Mangalsutra.'
+                  : `We craft bespoke handcrafted pieces matching your specifications for ${activeSubCategory !== 'ALL' ? activeSubCategory : activeCategory}. Please contact our ULHASNAGAR showroom on WhatsApp to design your dream piece.`
                 }
               </p>
               <a 
-                href="https://wa.me/9107776977700?text=Hello%20HARDIK%20Jewellers,%20I%20want%20to%20place%20a%20custom%20order." 
+                href="https://wa.me/919892911531?text=Hello%20HARDIK%20Jewellers,%20I%20want%20to%20place%20a%20custom%20order." 
                 target="_blank"
                 rel="noreferrer"
                 className="custom-order-link"
@@ -2777,9 +2777,9 @@ export default function Home() {
             {/* Showroom info & Details */}
             <div className="contact-info-block">
               <h2 className="section-pretitle">VISIT OUR SHOWROOM</h2>
-              <h3 className="showroom-title">LAXMI JEWELLERS</h3>
+              <h3 className="showroom-title">HARDIK JEWELLERS</h3>
               <p className="showroom-desc">
-                Step into a world of pure heritage gold and flawless diamonds. Our flagship showroom in ADAWAD showcases one-of-a-kind bespoke bridal sets, beautiful light-weight items, and custom kada collections.
+                Step into a world of pure heritage gold and flawless diamonds. Our flagship showroom in ULHASNAGAR showcases one-of-a-kind bespoke bridal sets, beautiful light-weight items, and custom kada collections.
               </p>
 
               <div className="info-cards-stack">
@@ -2792,7 +2792,7 @@ export default function Home() {
                   <div className="info-card-text">
                     <h4 className="info-card-label">Our Showroom Address</h4>
                     <p className="info-card-value">
-                      Maharana Pratap Road,Near Old Police Station Adawad Tal:Chopda ,Dist:Jalgaon, Adavad, Maharashtra 425303
+                      Shop no 416, Triveni building, Opposite Harmam Mohta Gate Shiv Road, Ulhasnagar 1, Birla Gate, Kalyan, Maharashtra 421103
                     </p>
                     <a href="https://maps.app.goo.gl/vxGPeZx9RukdR3dq8?g_st=ic" target="_blank" rel="noreferrer" className="whatsapp-link" style={{ marginTop: '4px', fontSize: '11px', display: 'inline-block' }}>
                       VIEW ON GOOGLE MAPS &rarr;
@@ -2821,10 +2821,10 @@ export default function Home() {
                   </div>
                   <div className="info-card-text">
                     <h4 className="info-card-label">Phone & Inquiries</h4>
-                    <a href="tel:07776977700" className="info-card-phone-link">
+                    <a href="tel:+919892911531" className="info-card-phone-link">
                       07776977700
                     </a>
-                    <a href="https://wa.me/9107776977700?text=Hello%20HARDIK%20Jewellers,%20I%20have%20an%20inquiry%20regarding%20your%20collections." className="whatsapp-link" target="_blank" rel="noreferrer">
+                    <a href="https://wa.me/919892911531?text=Hello%20HARDIK%20Jewellers,%20I%20have%20an%20inquiry%20regarding%20your%20collections." className="whatsapp-link" target="_blank" rel="noreferrer">
                       CONNECT ON WHATSAPP &rarr;
                     </a>
                   </div>
@@ -2853,7 +2853,7 @@ export default function Home() {
                 };
                 const existing = JSON.parse(localStorage.getItem('HARDIK_inquiries') || '[]');
                 localStorage.setItem('HARDIK_inquiries', JSON.stringify([inquiry, ...existing]));
-                alert("Thank you! Our ADAWAD showroom representative will reach out to you shortly."); 
+                alert("Thank you! Our ULHASNAGAR showroom representative will reach out to you shortly."); 
                 e.target.reset();
               }} className="contact-form">
                 <div className="form-row">
@@ -2948,7 +2948,7 @@ export default function Home() {
       }}>
         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
           <a 
-            href="https://www.instagram.com/laxmijewellersadawad/" 
+            href="https://www.instagram.com/hardikjewellers_/" 
             target="_blank" 
             rel="noreferrer" 
             style={{ textDecoration: 'none', display: 'inline-block' }}
@@ -2997,14 +2997,14 @@ export default function Home() {
               marginBottom: '32px'
             }} className="insta-grid">
               
-                {([ { url: '/assets/ZIPRINGS/new_ring_3.jpeg', link: 'https://www.instagram.com/laxmijewellersadawad/', title: 'Gents Ring Classic' },
-                { url: '/assets/silver_heart_bangles.jpg', link: 'https://www.instagram.com/laxmijewellersadawad/', title: 'Silver Heart Bangles' },
-                { url: '/assets/gents_collection_img.jpg', link: 'https://www.instagram.com/laxmijewellersadawad/', title: 'Gents Gold Collection' },
-                { url: '/assets/ladies_collection_img.jpg', link: 'https://www.instagram.com/laxmijewellersadawad/', title: 'Ladies Gold Bangle' },
-                { url: '/assets/ZIPWEDDING_NEW/wc1.jpeg', link: 'https://www.instagram.com/laxmijewellersadawad/', title: 'Bridal Wedding Set' },
-                { url: '/assets/ZIPWEDDING_NEW/wc2.jpeg', link: 'https://www.instagram.com/laxmijewellersadawad/', title: 'Luxury Gold Choker' },
-                { url: '/assets/ZIPWEDDING_NEW/wc3.jpeg', link: 'https://www.instagram.com/laxmijewellersadawad/', title: 'Traditional Gold Bangle' },
-                { url: '/assets/hero_2.jpg', link: 'https://www.instagram.com/laxmijewellersadawad/', title: 'Gold Rings Set' }
+                {([ { url: '/assets/ZIPRINGS/new_ring_3.jpeg', link: 'https://www.instagram.com/hardikjewellers_/', title: 'Gents Ring Classic' },
+                { url: '/assets/silver_heart_bangles.jpg', link: 'https://www.instagram.com/hardikjewellers_/', title: 'Silver Heart Bangles' },
+                { url: '/assets/gents_collection_img.jpg', link: 'https://www.instagram.com/hardikjewellers_/', title: 'Gents Gold Collection' },
+                { url: '/assets/ladies_collection_img.jpg', link: 'https://www.instagram.com/hardikjewellers_/', title: 'Ladies Gold Bangle' },
+                { url: '/assets/ZIPWEDDING_NEW/wc1.jpeg', link: 'https://www.instagram.com/hardikjewellers_/', title: 'Bridal Wedding Set' },
+                { url: '/assets/ZIPWEDDING_NEW/wc2.jpeg', link: 'https://www.instagram.com/hardikjewellers_/', title: 'Luxury Gold Choker' },
+                { url: '/assets/ZIPWEDDING_NEW/wc3.jpeg', link: 'https://www.instagram.com/hardikjewellers_/', title: 'Traditional Gold Bangle' },
+                { url: '/assets/hero_2.jpg', link: 'https://www.instagram.com/hardikjewellers_/', title: 'Gold Rings Set' }
               ]).map((post, idx) => (
                 <a 
                   key={idx} 
@@ -3051,7 +3051,7 @@ export default function Home() {
           )}
 
           <a 
-            href="https://www.instagram.com/laxmijewellersadawad/" 
+            href="https://www.instagram.com/hardikjewellers_/" 
             target="_blank" 
             rel="noreferrer"
             style={{
@@ -3105,7 +3105,7 @@ export default function Home() {
             textTransform: 'uppercase',
             letterSpacing: '1px'
           }}>
-            Experience Laxmi Jewellers on Mobile
+            Experience Hardik Jewellers on Mobile
           </h2>
           <p style={{
             fontFamily: 'var(--font-sans)',
@@ -3250,7 +3250,7 @@ export default function Home() {
                 fontFamily: 'var(--font-sans)', color: '#4a4a4a',
                 fontSize: '13px', lineHeight: '1.8'
               }}>
-                <li style={{ marginBottom: '10px' }}>Open <strong>Safari</strong> and go to <strong>www.laxmijewellers.in</strong>.</li>
+                <li style={{ marginBottom: '10px' }}>Open <strong>Safari</strong> and go to <strong>www.hardikjewellers.in</strong>.</li>
                 <li style={{ marginBottom: '10px' }}>Tap the <strong>Share</strong> button (square icon with an arrow pointing up) at the bottom toolbar.</li>
                 <li style={{ marginBottom: '10px' }}>Scroll down and select <strong>"Add to Home Screen"</strong> from the list of options.</li>
                 <li>Tap <strong>"Add"</strong> at the top right to complete the installation.</li>
@@ -3264,8 +3264,8 @@ export default function Home() {
       <footer className="footer-main">
         <div className="footer-inner">
           <div className="footer-brand">
-            <span className="footer-brand-title">LAXMI JEWELLERS</span>
-            <span className="footer-brand-sub">ADAWAD</span>
+            <span className="footer-brand-title">HARDIK JEWELLERS</span>
+            <span className="footer-brand-sub">ULHASNAGAR</span>
           </div>
 
           <div className="footer-links">
@@ -3280,7 +3280,7 @@ export default function Home() {
 
           <div className="footer-socials">
             <span className="social-label">FOLLOW US ON INSTAGRAM:</span>
-            <a href="https://www.instagram.com/laxmijewellersadawad?igsi=MXBiemI5amFsMml3bw%3D%3D&utm_source=qr" target="_blank" rel="noreferrer" className="instagram-circle-btn" aria-label="Instagram">
+            <a href="https://www.instagram.com/hardikjewellers_?igsi=MXBiemI5amFsMml3bw%3D%3D&utm_source=qr" target="_blank" rel="noreferrer" className="instagram-circle-btn" aria-label="Instagram">
               <svg className="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
@@ -3291,7 +3291,7 @@ export default function Home() {
         </div>
         
         <div className="footer-copyright">
-          &copy; {new Date().getFullYear()} LAXMI JEWELLERS. All Rights Reserved. Pure BIS Hallmarked Gold & Certified Diamonds.
+          &copy; {new Date().getFullYear()} HARDIK JEWELLERS. All Rights Reserved. Pure BIS Hallmarked Gold & Certified Diamonds.
         </div>
       </footer>
 
@@ -3620,7 +3620,7 @@ export default function Home() {
                     {/* Action buttons (WhatsApp inquiry and Trash remove) */}
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <a
-                        href={`https://wa.me/9107776977700?text=Hello%20HARDIK%20Jewellers,%20I%20am%20interested%20in%20buying%20your%20${encodeURIComponent(product.title)}.%0A%0AProduct%20Link:%20https://www.laxmijewellers.in/?product=${product.id}%20from%20my%20wishlist.`}
+                        href={`https://wa.me/919892911531?text=Hello%20HARDIK%20Jewellers,%20I%20am%20interested%20in%20buying%20your%20${encodeURIComponent(product.title)}.%0A%0AProduct%20Link:%20https://www.hardikjewellers.in/?product=${product.id}%20from%20my%20wishlist.`}
                         target="_blank"
                         rel="noreferrer"
                         style={{
@@ -3772,7 +3772,7 @@ export default function Home() {
 
                 <button type="submit" className="admin-submit-btn">PUBLISH LIVE RATES PUBLICLY</button>
                 <p style={{ fontSize: '10px', color: 'var(--text-muted)', marginTop: '12px', textAlign: 'center', lineHeight: '1.4' }}>
-                  <strong>Note:</strong> Submitting this form will automatically write and push the updated rates directly to your GitHub repository! Vercel will automatically re-deploy the new rates publicly for all visitors within 20 seconds.
+                  
                 </p>
               </form>
 
@@ -3949,7 +3949,7 @@ export default function Home() {
               <div style={{ display: 'flex', gap: '10px' }}>
                 <button
                   onClick={() => {
-                    navigator.clipboard.writeText(`https://www.laxmijewellers.in/?product=${lightboxProduct.id}`);
+                    navigator.clipboard.writeText(`https://www.hardikjewellers.in/?product=${lightboxProduct.id}`);
                     alert("Product link copied to clipboard!");
                   }}
                   style={{
@@ -3962,7 +3962,7 @@ export default function Home() {
                   <Share2 size={18} />
                 </button>
                 <a
-                  href={`https://wa.me/9107776977700?text=Hello%20HARDIK%20Jewellers,%20I%20am%20interested%20in%20buying%20your%20${encodeURIComponent(lightboxProduct.title)}.%0A%0AProduct%20Link:%20https://www.laxmijewellers.in/?product=${lightboxProduct.id}`}
+                  href={`https://wa.me/919892911531?text=Hello%20HARDIK%20Jewellers,%20I%20am%20interested%20in%20buying%20your%20${encodeURIComponent(lightboxProduct.title)}.%0A%0AProduct%20Link:%20https://www.hardikjewellers.in/?product=${lightboxProduct.id}`}
                   target="_blank"
                   rel="noreferrer"
                   style={{

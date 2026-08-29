@@ -322,7 +322,7 @@ export default function AdminDashboard() {
             <form onSubmit={handleSendPushAlert} style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <div>
                 <label style={{ display: 'block', color: '#888', marginBottom: '4px', fontSize: '0.85rem' }}>Alert Title</label>
-                <input type="text" placeholder="e.g. Laxmi Jewellers" name="alertTitle" required style={{ padding: '10px', width: '100%', background: '#000', border: '1px solid #444', color: '#fff', outline: 'none', borderRadius: '4px' }} />
+                <input type="text" placeholder="e.g. Hardik Jewellers" name="alertTitle" required style={{ padding: '10px', width: '100%', background: '#000', border: '1px solid #444', color: '#fff', outline: 'none', borderRadius: '4px' }} />
               </div>
               <div>
                 <label style={{ display: 'block', color: '#888', marginBottom: '4px', fontSize: '0.85rem' }}>Alert Message</label>
@@ -579,12 +579,12 @@ function LedgerContent({ scheme, payments, handleApproval, setSelectedScheme, is
   return (
     <div style={{ color: isPrintMode ? '#000' : '#fff' }}>
       <div style={{ textAlign: 'center', marginBottom: '30px', borderBottom: `2px solid ${isPrintMode ? '#000' : 'var(--royal-gold)'}`, paddingBottom: '20px' }}>
-        <h2 style={{ fontFamily: '"Playfair Display", serif', fontSize: '2.5rem', margin: 0, textTransform: 'uppercase', letterSpacing: '2px', color: isPrintMode ? '#000' : 'var(--royal-gold)' }}>Laxmi Jewellers</h2>
+        <h2 style={{ fontFamily: '"Playfair Display", serif', fontSize: '2.5rem', margin: 0, textTransform: 'uppercase', letterSpacing: '2px', color: isPrintMode ? '#000' : 'var(--royal-gold)' }}>Hardik Jewellers</h2>
         
         {isPrintMode && (
           <div style={{ fontSize: '0.9rem', color: '#444', marginTop: '10px', lineHeight: '1.5' }}>
             <p style={{ margin: 0 }}>Opp. Old Bus Stand, Main Market, City - 123456</p>
-            <p style={{ margin: 0 }}>Phone: +91 98765 43210 | Email: contact@laxmijewellers.com</p>
+            <p style={{ margin: 0 }}>Phone: +91 98929 11531 | Email: contact@hardikjewellers.com</p>
             <p style={{ margin: 0 }}>GSTIN: 24AAAAA0000A1Z5</p>
           </div>
         )}
