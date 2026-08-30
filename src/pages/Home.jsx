@@ -3788,7 +3788,7 @@ export default function Home() {
               color: '#555555',
               lineHeight: '1.4'
             }}>
-              Gold rates updated! <>24K: <strong>₹{goldRates.gold24k}/g</strong> | </>}22K: <strong>₹{goldRates.gold22k}/g</strong>.
+              Gold rates updated! 24K: <strong>₹{goldRates.gold24k}/g</strong> | 22K: <strong>₹{goldRates.gold22k}/g</strong>.
             </p>
           </div>
 
