@@ -1799,8 +1799,7 @@ export default function Home() {
               LIVE RATE
             </span>
             <span className="ticker-item" style={{ fontWeight: 700, color: '#ffffff' }}>HARDIK JEWELLERS:</span>
-            <span className="ticker-item">24K GOLD: <strong>₹{goldRates.gold24k}/g</strong></span>
-            <span className="ticker-item-separator"> | </span>
+
             <span className="ticker-item">22K GOLD: <strong>₹{goldRates.gold22k}/g</strong></span>
             <span className="ticker-item-separator"> | </span>
             <span className="ticker-item">18K GOLD: <strong>₹{goldRates.gold18k}/g</strong></span>
@@ -1811,8 +1810,7 @@ export default function Home() {
             
             {/* Duplicated loop for infinite scrolling marquee */}
             <span className="ticker-item-separator" style={{ margin: '0 20px' }}> | </span>
-            <span className="ticker-item">24K GOLD: <strong>₹{goldRates.gold24k}/g</strong></span>
-            <span className="ticker-item-separator"> | </span>
+
             <span className="ticker-item">22K GOLD: <strong>₹{goldRates.gold22k}/g</strong></span>
             <span className="ticker-item-separator"> | </span>
             <span className="ticker-item">18K GOLD: <strong>₹{goldRates.gold18k}/g</strong></span>
@@ -2042,13 +2040,7 @@ export default function Home() {
             justifyContent: 'center',
             gap: '24px'
           }}>
-            {/* 24K Gold */}
-            <div style={{ flex: '1 1 200px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '24px 16px', background: '#fff', borderRadius: '12px', border: '1px solid rgba(212, 138, 148, 0.25)', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
-                <div style={{ fontSize: '12px', color: 'var(--text-gray)', fontWeight: '700', letterSpacing: '1px', textAlign: 'center', marginBottom: '12px' }}>24K GOLD <span style={{fontSize: '10px', fontWeight: '500', opacity: 0.8}}>(99.9%)</span></div>
-                <div style={{ fontSize: '22px', fontWeight: '800', color: 'var(--peacock-green)', textAlign: 'center', display: 'flex', alignItems: 'baseline', gap: '4px' }}>
-                  ₹{goldRates.gold24k} <span style={{fontSize: '13px', fontWeight: '500', color: 'var(--text-gray)'}}>/ gm</span>
-                </div>
-              </div>
+            {/* 24K Gold - hidden */}
             
             {/* 22K Gold */}
             <div style={{ flex: '1 1 200px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '24px 16px', background: '#fff', borderRadius: '12px', border: '1px solid rgba(212, 138, 148, 0.25)', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
