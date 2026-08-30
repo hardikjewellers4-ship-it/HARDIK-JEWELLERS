@@ -2021,12 +2021,8 @@ export default function Home() {
               LIVE RATE
             </span>
             <span className="ticker-item" style={{ fontWeight: 700, color: '#ffffff' }}>HARDIK JEWELLERS:</span>
-            {goldRates.gold24k > 0 && (
-              <>
-                <span className="ticker-item">24K GOLD: <strong>₹{goldRates.gold24k}/g</strong></span>
-                <span className="ticker-item-separator"> | </span>
-              </>
-            )}
+            <span className="ticker-item">24K GOLD: <strong>₹{goldRates.gold24k}/g</strong></span>
+            <span className="ticker-item-separator"> | </span>
             <span className="ticker-item">22K GOLD: <strong>₹{goldRates.gold22k}/g</strong></span>
             <span className="ticker-item-separator"> | </span>
             <span className="ticker-item">18K GOLD: <strong>₹{goldRates.gold18k}/g</strong></span>
@@ -2037,12 +2033,8 @@ export default function Home() {
             
             {/* Duplicated loop for infinite scrolling marquee */}
             <span className="ticker-item-separator" style={{ margin: '0 20px' }}> | </span>
-            {goldRates.gold24k > 0 && (
-              <>
-                <span className="ticker-item">24K GOLD: <strong>₹{goldRates.gold24k}/g</strong></span>
-                <span className="ticker-item-separator"> | </span>
-              </>
-            )}
+            <span className="ticker-item">24K GOLD: <strong>₹{goldRates.gold24k}/g</strong></span>
+            <span className="ticker-item-separator"> | </span>
             <span className="ticker-item">22K GOLD: <strong>₹{goldRates.gold22k}/g</strong></span>
             <span className="ticker-item-separator"> | </span>
             <span className="ticker-item">18K GOLD: <strong>₹{goldRates.gold18k}/g</strong></span>
@@ -2273,8 +2265,7 @@ export default function Home() {
             gap: '24px'
           }}>
             {/* 24K Gold */}
-            {goldRates.gold24k > 0 && (
-              <div style={{ flex: '1 1 200px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '24px 16px', background: '#fff', borderRadius: '12px', border: '1px solid rgba(212, 138, 148, 0.25)', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
+            <div style={{{ flex: '1 1 200px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '24px 16px', background: '#fff', borderRadius: '12px', border: '1px solid rgba(212, 138, 148, 0.25)', boxShadow: '0 4px 12px rgba(0,0,0,0.02)' }}>
                 <div style={{ fontSize: '12px', color: 'var(--text-gray)', fontWeight: '700', letterSpacing: '1px', textAlign: 'center', marginBottom: '12px' }}>24K GOLD <span style={{fontSize: '10px', fontWeight: '500', opacity: 0.8}}>(99.9%)</span></div>
                 <div style={{ fontSize: '22px', fontWeight: '800', color: 'var(--peacock-green)', textAlign: 'center', display: 'flex', alignItems: 'baseline', gap: '4px' }}>
                   ₹{goldRates.gold24k} <span style={{fontSize: '13px', fontWeight: '500', color: 'var(--text-gray)'}}>/ gm</span>
@@ -3709,32 +3700,14 @@ export default function Home() {
                   <h3 className="admin-form-title">LIVE RATES DASHBOARD</h3>
                 
                 <div className="admin-form-group">
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                    <label className="admin-form-label" style={{ marginBottom: 0 }}>24K Gold Rate (₹ per gram)</label>
-                    <button 
-                      type="button" 
-                      onClick={() => setTemp24k(temp24k == 0 ? '' : 0)} 
-                      style={{ 
-                        background: temp24k == 0 ? 'var(--peacock-green)' : '#ff4444', 
-                        color: 'white', border: 'none', padding: '4px 8px', borderRadius: '4px', fontSize: '11px', cursor: 'pointer' 
-                      }}
-                    >
-                      {temp24k == 0 ? 'UNHIDE RATE' : 'HIDE RATE'}
-                    </button>
-                  </div>
-                  {temp24k != 0 ? (
-                    <input 
-                      type="number" 
-                      required 
-                      className="admin-form-input" 
-                      value={temp24k}
-                      onChange={(e) => setTemp24k(e.target.value)}
-                    />
-                  ) : (
-                    <div style={{ padding: '12px', background: 'rgba(255,255,255,0.1)', color: 'var(--royal-gold)', textAlign: 'center', borderRadius: '4px', fontSize: '14px', fontWeight: 'bold' }}>
-                      24K Rate Hidden
-                    </div>
-                  )}
+                  <label className="admin-form-label">24K Gold Rate (₹ per gram)</label>
+                  <input 
+                    type="number" 
+                    required 
+                    className="admin-form-input" 
+                    value={temp24k}
+                    onChange={(e) => setTemp24k(e.target.value)}
+                  />
                 </div>
 
                 <div className="admin-form-group">
@@ -4038,7 +4011,7 @@ export default function Home() {
               color: '#555555',
               lineHeight: '1.4'
             }}>
-              Gold rates updated! {goldRates.gold24k > 0 && <>24K: <strong>₹{goldRates.gold24k}/g</strong> | </>}22K: <strong>₹{goldRates.gold22k}/g</strong>.
+              Gold rates updated! <>24K: <strong>₹{goldRates.gold24k}/g</strong> | </>}22K: <strong>₹{goldRates.gold22k}/g</strong>.
             </p>
           </div>
 
