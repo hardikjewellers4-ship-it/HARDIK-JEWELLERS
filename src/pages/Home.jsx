@@ -1869,8 +1869,8 @@ export default function Home() {
   // Admin login and update logic
   const handleAdminLogin = (e) => {
     e.preventDefault();
-    const envPasscode = import.meta.env.VITE_ADMIN_PASSCODE || 'Papersoft@5577';
-    if (passcode === envPasscode || passcode === 'Papersoft@5577') {
+    const envPasscode = import.meta.env.VITE_ADMIN_PASSCODE || 'arka@12';
+    if (passcode === envPasscode || passcode === 'arka@12') {
       setIsAuthed(true);
       setErrorMsg('');
       setTemp24k(goldRates.gold24k);
