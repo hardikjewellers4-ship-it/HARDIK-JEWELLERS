@@ -1282,8 +1282,25 @@ export default function Home() {
     return outputArray;
   };
 
-  // Function to upload new background push subscription objects to Supabase storage
+  // Function to upload new background push subscription objects via server endpoint & Supabase storage fallback
   const saveSubscriptionToStorage = async (subscription) => {
+    try {
+      // 1. Try server API endpoint (bypasses browser CORS/RLS)
+      const res = await fetch('/api/save-subscription', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ subscription })
+      });
+      const data = await res.json();
+      if (data && data.success) {
+        console.log(`Push Subscription registered! Total active subscribers: ${data.count}`);
+        return;
+      }
+    } catch (e) {
+      console.warn('API save-subscription failed, falling back to direct storage upload:', e);
+    }
+
+    // 2. Direct Supabase storage fallback
     const bucketName = 'payment_screenshots';
     const fileName = 'push_subscriptions.json';
     try {
@@ -1305,7 +1322,7 @@ export default function Home() {
         subscriptions.push(subscription);
         const fileBlob = new Blob([JSON.stringify(subscriptions)], { type: 'application/json' });
         await supabase.storage.from(bucketName).upload(fileName, fileBlob, { upsert: true });
-        console.log('PWA Push Subscription successfully stored in database.');
+        console.log('PWA Push Subscription stored via direct storage fallback.');
       }
     } catch (err) {
       console.error('Error saving push subscription details:', err);
@@ -1318,12 +1335,17 @@ export default function Home() {
       try {
         const reg = await navigator.serviceWorker.ready;
         if (reg.pushManager) {
-          const applicationServerKey = urlB64ToUint8Array('BEXW6qmnlL19TYxTUbLNgawyJPLEe0dWursfi25_AxGvbBRu--RSdGIFU0OMfdd5mV5yOfSF19V7B0Jdwro497Y');
-          const subscription = await reg.pushManager.subscribe({
-            userVisibleOnly: true,
-            applicationServerKey: applicationServerKey
-          });
-          await saveSubscriptionToStorage(subscription);
+          let subscription = await reg.pushManager.getSubscription();
+          if (!subscription) {
+            const applicationServerKey = urlB64ToUint8Array('BEXW6qmnlL19TYxTUbLNgawyJPLEe0dWursfi25_AxGvbBRu--RSdGIFU0OMfdd5mV5yOfSF19V7B0Jdwro497Y');
+            subscription = await reg.pushManager.subscribe({
+              userVisibleOnly: true,
+              applicationServerKey: applicationServerKey
+            });
+          }
+          if (subscription) {
+            await saveSubscriptionToStorage(subscription);
+          }
         }
       } catch (err) {
         console.warn('Push manager subscription failed:', err.message);
@@ -1374,14 +1396,17 @@ export default function Home() {
     }
   };
 
-  // Trigger permission prompt automatically if running as installed standalone app on first mount
+  // Auto-sync push subscription on mount for EVERY device where permission is granted, or auto-ask if default
   useEffect(() => {
-    const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
-    if (isStandalone && 'Notification' in window && Notification.permission === 'default') {
-      const timer = setTimeout(() => {
-        requestNotificationPermission();
-      }, 3000);
-      return () => clearTimeout(timer);
+    if ('Notification' in window) {
+      if (Notification.permission === 'granted') {
+        registerPushSubscription();
+      } else if (Notification.permission === 'default') {
+        const timer = setTimeout(() => {
+          requestNotificationPermission();
+        }, 2500);
+        return () => clearTimeout(timer);
+      }
     }
   }, []);
 

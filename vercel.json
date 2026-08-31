@@ -3,6 +3,10 @@
     "api/send-push.js": {
       "memory": 512,
       "maxDuration": 15
+    },
+    "api/save-subscription.js": {
+      "memory": 512,
+      "maxDuration": 15
     }
   },
   "rewrites": [
