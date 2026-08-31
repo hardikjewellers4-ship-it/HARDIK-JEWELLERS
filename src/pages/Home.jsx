@@ -1753,7 +1753,7 @@ export default function Home() {
         fetch('/api/send-push', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ gold24k: Number(temp24k), gold22k: Number(temp22k) })
+          body: JSON.stringify({ gold22k: Number(temp22k), silver: Number(tempSilver) })
         }).then(res => res.json())
           .then(data => console.log('Push broadcast status:', data))
           .catch(err => console.error('Push broadcast error:', err));

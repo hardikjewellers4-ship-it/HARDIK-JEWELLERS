@@ -39,11 +39,11 @@ export default async function handler(req, res) {
       subscriptions = [];
     }
 
-    // Build default rate message (only 22K shown, 24K hidden)
+    // Build default rate message - show only 22K and Silver
     let defaultBody;
     if (gold22k) {
       defaultBody = `\uD83D\uDD14 Today's Gold Rate: 22K = \u20B9${gold22k}/g`;
-      if (gold18k) defaultBody += ` | 18K = \u20B9${gold18k}/g`;
+      if (silver) defaultBody += ` | Silver = \u20B9${silver}/g`;
       defaultBody += `. Tap to view latest rates.`;
     } else {
       defaultBody = `\uD83D\uDD14 New update from Hardik Jewellers! Check today's gold rates.`;
