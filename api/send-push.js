@@ -17,13 +17,10 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   if (req.method === 'OPTIONS') return res.status(200).end();
-
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
+  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
   try {
-    const { gold22k, customTitle, customBody } = req.body || {};
+    const { gold22k, gold18k, silver, customTitle, customBody } = req.body || {};
 
     // Download subscriptions from Supabase storage
     const { data, error } = await supabase.storage
@@ -42,23 +39,34 @@ export default async function handler(req, res) {
       subscriptions = [];
     }
 
-    const defaultBody = `\uD83D\uDD14 Live Gold Rate Alert: 22K Gold is at \u20B9${gold22k}/g. Tap to view.`;
+    // Build default rate message (only 22K shown, 24K hidden)
+    let defaultBody;
+    if (gold22k) {
+      defaultBody = `\uD83D\uDD14 Today's Gold Rate: 22K = \u20B9${gold22k}/g`;
+      if (gold18k) defaultBody += ` | 18K = \u20B9${gold18k}/g`;
+      defaultBody += `. Tap to view latest rates.`;
+    } else {
+      defaultBody = `\uD83D\uDD14 New update from Hardik Jewellers! Check today's gold rates.`;
+    }
 
     const payload = JSON.stringify({
       title: customTitle || 'Hardik Jewellers',
       body: customBody || defaultBody
     });
 
-    const results = await Promise.allSettled(
-      subscriptions.map((sub) =>
-        webpush.sendNotification(sub, payload).catch((err) => {
-          console.error('Push failed:', sub.endpoint, err.message);
-          return null;
-        })
-      )
+    let sent = 0;
+    await Promise.allSettled(
+      subscriptions.map(async (sub) => {
+        try {
+          await webpush.sendNotification(sub, payload);
+          sent++;
+        } catch (err) {
+          console.error('Push failed for:', sub.endpoint, err.message);
+        }
+      })
     );
 
-    return res.status(200).json({ success: true, sentCount: subscriptions.length });
+    return res.status(200).json({ success: true, sentCount: sent, total: subscriptions.length });
   } catch (err) {
     console.error('Push handler error:', err);
     return res.status(500).json({ error: err.message });
