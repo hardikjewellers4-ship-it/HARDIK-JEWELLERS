@@ -1551,7 +1551,7 @@ export default function Home() {
   useEffect(() => {
     // Check if running in standalone PWA mode
     const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
-    if (isStandalone && goldRates.gold24k) {
+    if (isStandalone && goldRates.gold22k) {
       const timer = setTimeout(() => {
         setShowPwaNotification(true);
       }, 1500);
@@ -3493,16 +3493,7 @@ export default function Home() {
                 <form onSubmit={handleSaveRates}>
                   <h3 className="admin-form-title">LIVE RATES DASHBOARD</h3>
                 
-                <div className="admin-form-group">
-                  <label className="admin-form-label">24K Gold Rate (₹ per gram)</label>
-                  <input 
-                    type="number" 
-                    required 
-                    className="admin-form-input" 
-                    value={temp24k}
-                    onChange={(e) => setTemp24k(e.target.value)}
-                  />
-                </div>
+
 
                 <div className="admin-form-group">
                   <label className="admin-form-label">22K Gold Rate (₹ per gram)</label>
@@ -3805,7 +3796,7 @@ export default function Home() {
               color: '#555555',
               lineHeight: '1.4'
             }}>
-              Gold rates updated! 24K: <strong>₹{goldRates.gold24k}/g</strong> | 22K: <strong>₹{goldRates.gold22k}/g</strong>.
+              Gold rates updated! 22K: <strong>₹{goldRates.gold22k}/g</strong> | Silver: <strong>₹{goldRates.silver}/g</strong>.
             </p>
           </div>
 
